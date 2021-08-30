@@ -57,28 +57,23 @@ CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
 
-Then, write a function named `speaker` that takes in an array of strings and a callback function. 
+Then, write a function named `speaker` that takes in an array of strings and a callback function.
 
-Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
+Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
   // Solution code here...
-  let str;
-  word.forEach(element => {
-    str = element.toUpperCase() + '!';
-  });
-  return str;
+  return word.toUpperCase() + '!';
 };
 
 const speaker = (words, callback) => {
   // Solution code here...
-  let array = [];
-  this.callback = callback();
+  let strArray = [];
   words.forEach(element => {
-    array.push(element.this.callback);
+    strArray.push(callback(element));
   });
-  return array;
+  return strArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,10 +94,23 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  // let modifiedArray = [];
+  for (let i = 0; i < times; i++) {
+    callback(arr,num);
+  }
+  return arr;
+  // times.forEach(element => {
+  //   callback(element);
+  //   modifiedArray.push(num);
+  //   console.log(element);
+  //   console.log(modifiedArray);
+  // });
+  // return modifiedArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,6 +133,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let list = [];
+  availableItems.forEach(element => {
+    if (element.available === true) {
+      list.push(element.name);
+    }
+  });
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
