@@ -95,8 +95,8 @@ const mapTwoToThe = (arr) => {
   });
 };
 
-  // Solution code here...
-};
+// Solution code here...
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
