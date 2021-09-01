@@ -25,9 +25,9 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  const filterEvenNumbers = arr.filter((number) => {
-
-    return ();
+  const filterEvenNumbers = arr.filter((value) => {
+  //using typeOf
+    return (typeof value === 'number');
   });
   return filterEvenNumbers;
 };
