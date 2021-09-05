@@ -42,11 +42,22 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
+
   const filterStr = arr.filter((value) => {
+
+
+  const filterValue = arr.filter((value) => {
+    return (value.includes('and'));
+  });
+  return filterValue;
+
+  const filterEvenNumbers = arr.filter((value) => {
+
     //using typeOf
     return (typeof value === 'string');
   });
   return filterStr;
+
 
 };
 
@@ -60,7 +71,13 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  const filterValue = arr.filter((value) => {
+    return (value % 2 !== 0);
+  });
+  return filterValue;
+
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -70,10 +87,13 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
+
+
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  let newArr = arr.filter(value => !forbiddenValues.includes(value));
+  return newArr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 

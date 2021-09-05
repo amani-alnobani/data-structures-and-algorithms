@@ -89,10 +89,13 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  const newArr=arr.map((value) => {
-    newArr.push(Math.pow(2,value));
+  let newArr=[];
+  newArr=arr.map((value) => {
+    newArr=Math.pow(2,value);
     return newArr;
   });
+  console.log(newArr);
+  return newArr;
 };
 
 // Solution code here...
