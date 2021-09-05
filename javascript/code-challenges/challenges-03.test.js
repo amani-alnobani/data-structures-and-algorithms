@@ -43,16 +43,20 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 const containsAnd = (arr) => {
   // Solution code here...
 
+  const filterStr = arr.filter((value) => {
+
+
   const filterValue = arr.filter((value) => {
     return (value.includes('and'));
   });
   return filterValue;
 
   const filterEvenNumbers = arr.filter((value) => {
+
     //using typeOf
     return (typeof value === 'string');
   });
-  return filterEvenNumbers;
+  return filterStr;
 
 
 };
