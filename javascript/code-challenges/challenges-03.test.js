@@ -43,7 +43,7 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 const containsAnd = (arr) => {
   // Solution code here...
   const filterValue = arr.filter((value) => {
-    return ( value.includes('and'));
+    return (value.includes('and'));
   });
   return filterValue;
 
@@ -75,15 +75,13 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
+
+
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
-  const newArr = arr.filter((value) => {
-    return (value.includes(forbiddenValues) !== value.includes(arr));
-  });
+  let newArr = arr.filter(value => !forbiddenValues.includes(value));
   return newArr;
-
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
