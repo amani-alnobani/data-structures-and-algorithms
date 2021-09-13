@@ -20,8 +20,16 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
-  let result = Object.keys(obj).map((key) => ['<li>'+Number(key), obj[key]]+'</li>');
-  return result;
+  let array1 = Object.keys(obj);
+
+  let array2 = Object.values(obj);
+
+  let array3 = array1.map((a, b) => {
+
+    return `<li>${a}: ${array2[b]}</li>`;
+  });
+
+  return array3;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,15 +44,19 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
-  let x=0;
-  input.filter(number => {
-    number.filter(integer => {
-      if (integer===number){
-        x=x+1;
-      }
-    });
+  let num  = input.reduce((x, y) => {
+    if (typeof y === 'object') {
+      y.forEach((item) => {
+        if (item === target) {
+          return x++;
+        }
+      });
+    } else if (typeof b === 'number' && y === target) {
+      return x++;
+    }
     return x;
-  });
+  }, 0);
+  return num;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,6 +71,14 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  let summation = input.reduce((x, y) => {
+    y.map((value) => {
+      x = x + value;
+      return x;
+    });
+    return x;
+  }, 0);
+  return summation;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,6 +95,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  let newArr = input.map((value) => {
+    if (value) {
+      let filteredArr = value.filter((a) => typeof a === 'number' && a % 5 === 0);
+      return filteredArr.map((b) => {
+        return Math.pow(2, b);
+      });
+    } else if (!value) {
+      return value;
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,6 +172,17 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  let array = data.filter((obj) => {
+    if (obj.gender === 'male' || obj.gender === 'female') {
+      return obj;
+    }
+  });
+
+  let nameOfObj = array.map((value) => {
+    return value.name;
+  });
+
+  return nameOfObj.join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -151,6 +193,14 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  let sortedArray = data.sort((first, second) =>
+    first.height > second.height
+      ? first.height - second.height
+      : first.height < second.height
+        ? second.height - first.height
+        : 0
+  );
+  return sortedArray[0].name;
 };
 
 /* ------------------------------------------------------------------------------------------------
